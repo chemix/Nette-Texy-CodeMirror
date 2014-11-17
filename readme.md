@@ -1,8 +1,8 @@
 Nette Texy CodeMirror
 =====================
 
- cmd+b - bold
- cmd+i - italic
+ cmd/ctrl + B - bold
+ cmd/ctrl + I - italic
 
  drag & drop image
 
