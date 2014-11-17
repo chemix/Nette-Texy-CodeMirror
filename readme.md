@@ -1,6 +1,11 @@
 Nette Texy CodeMirror
 =====================
 
+ cmd+b - bold
+ cmd+i - italic
+
+ drag & drop image
+
 
 
 Installing
