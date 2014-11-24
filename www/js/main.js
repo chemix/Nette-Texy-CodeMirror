@@ -18,7 +18,7 @@ $(function(){
             } else {
                 var cur = cm.doc.getCursor();
                 cm.doc.replaceRange(mark + mark, cur);
-                cm.doc.setCursor(cur.line, cur.ch + 1);
+                cm.doc.setCursor(cur.line, cur.ch + mark.length);
             }
         }
 
