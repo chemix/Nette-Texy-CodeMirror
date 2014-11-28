@@ -4,8 +4,55 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6cfba70340754f9d70db945f5f6090ae",
+    "hash": "d4c559313e84c2403ef124c99812f22f",
     "packages": [
+        {
+            "name": "brabijan/images",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/brabijan/images.git",
+                "reference": "79b618d8b8fece3b2e7d50cce83a45dd61bbd904"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/brabijan/images/zipball/79b618d8b8fece3b2e7d50cce83a45dd61bbd904",
+                "reference": "79b618d8b8fece3b2e7d50cce83a45dd61bbd904",
+                "shasum": ""
+            },
+            "require": {
+                "nette/nette": ">= 2.2.0"
+            },
+            "require-dev": {
+                "nette/tester": "@dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Brabijan\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause",
+                "GPL-2.0",
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Jan Brabec"
+                },
+                {
+                    "name": "Filip Procházka"
+                }
+            ],
+            "description": "Image storage for Nette Framework",
+            "keywords": [
+                "images",
+                "nette"
+            ],
+            "time": "2014-11-26 10:38:57"
+        },
         {
             "name": "dg/adminer-custom",
             "version": "v1.5.0",
@@ -1214,7 +1261,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "brabijan/images": 20
+    },
     "prefer-stable": false,
     "platform": {
         "php": ">= 5.3.7"

@@ -27,7 +27,7 @@ $(function(){
         });
 
         var options = {
-            uploadUrl: basePath + '/Homepage/save-image',
+            uploadUrl: basePath + '/Homepage/default?do=saveImage',
             urlText: "\n[*{filename}*]\n"
         }
 

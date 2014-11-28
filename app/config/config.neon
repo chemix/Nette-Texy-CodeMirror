@@ -6,6 +6,11 @@
 #
 parameters:
 
+extensions:
+    images: Brabijan\Images\DI\ImagesExtension
+
+images:
+	assetsDir: %wwwDir%/data
 
 php:
 	date.timezone: Europe/Prague

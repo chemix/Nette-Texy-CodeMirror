@@ -14,17 +14,34 @@ use Nette\Application\UI\Form;
  */
 class HomepagePresenter extends BasePresenter
 {
+	use \Brabijan\Images\TImagePipe;
 
-	public function renderDefault()
+	/**
+	 * @inject
+	 * @var \Brabijan\Images\ImageStorage
+	 */
+	public $imageStorage;
+
+	/**
+	 * @var Nette\Http\IRequest
+	 * @inject
+	 */
+	public $httpRequest;
+
+
+	public function actionDefault()
 	{
+
 	}
 
 	/**
-	 * TODO: use Nette way
 	 * Prototype of save image
 	 */
-	public function actionSaveimage()
+	public function handleSaveImage()
 	{
+		$this->imageStorage->setNamespace("articles");
+		$onlinePath = '/data/articles/';
+
 		$response = array();
 		/*
 		if (!$this->user->isAllowed('Article', 'edit')) {
@@ -33,15 +50,10 @@ class HomepagePresenter extends BasePresenter
 		}
 		*/
 
-		$uploadFolder = __DIR__ . '/../../www/data/articles/';
-		$onlinePath = '/data/articles/';
-
-		if (isset($_FILES['file'])) {
-			$file = $_FILES['file'];
-			$filename = uniqid() . '.' . (pathinfo($file['name'], PATHINFO_EXTENSION) ? : 'png');
-
-			move_uploaded_file($file['tmp_name'], $uploadFolder . $filename);
-
+		/** @var Nette\Http\FileUpload $file */
+		if($file = $this->httpRequest->getFile('file')) {
+			$filename = uniqid() . '.' . (pathinfo($file->name, PATHINFO_EXTENSION) ? : 'png');
+			$this->imageStorage->save($file->getContents(), $filename);
 			$response['filename'] = $onlinePath . $filename;
 		} else {
 			$response['error'] = 'Error while uploading file';
